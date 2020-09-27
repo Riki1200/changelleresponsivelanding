@@ -1,0 +1,268 @@
+@font-face {
+  src: url("/src/styles/fonts/Spartan-VariableFont_wght.ttf");
+  font-family: Spartan;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: Spartan;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 90ch;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: hsl(300, 24%, 96%);
+}
+.main__content {
+  box-shadow: 1px 1px 20px 1px hsla(300, 2%, 16%, 0.185);
+  background-color: hsl(0, 0%, 100%);
+  width: 1440px;
+  display: grid;
+  gap: 15px;
+  place-content: center;
+  justify-items: center;
+  grid-template-areas:
+    "raiting"
+    "experience";
+
+  grid-template-rows: 1fr 1fr;
+  place-items: center;
+  place-self: center;
+
+  background-image: url("/src/images/bg-pattern-top-desktop.svg"),
+    url("/src/images/bg-pattern-bottom-desktop.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom bottom;
+
+  background-size: 50% 50%, cover;
+  position: relative;
+}
+
+.main__content .section__raiting {
+  grid-area: raiting;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 100%;
+  padding: 10px 80px;
+  position: relative;
+}
+.main__content .section__raiting .article__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: baseline;
+  width: 50%;
+}
+
+.main__content .section__raiting .article__raiting {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 30px;
+  align-content: flex-end;
+  justify-content: center;
+  transform: translateX(-30px);
+  flex-basis: 600px;
+}
+
+.main__content .section__raiting .article__raiting .rate_users {
+  border-radius: 3px;
+  background-color: hsl(300, 24%, 96%);
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 40px;
+  flex-shrink: 1;
+  color: hsl(300, 43%, 22%);
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.main__content
+  .section__raiting
+  .article__raiting
+  .rate_users
+  .users_starts
+  img {
+  transform: scale(1.2);
+}
+.main__content .section__raiting .article__raiting .rate_users:nth-child(1) {
+  transform: translateX(-50px);
+  align-self: flex-end;
+  flex-shrink: 10;
+}
+.main__content .section__raiting .article__raiting .rate_users:nth-child(3) {
+  transform: translateX(50px);
+}
+
+.main__content .section__raiting .article__description .title_p {
+  font-size: 2.99999rem;
+  width: 350px;
+  font-family: Spartan;
+
+  font-weight: bold;
+  color: hsl(300, 43%, 22%);
+}
+
+.main__content .section__raiting .article__description .sub_title--p {
+  color: hsl(303, 10%, 53%);
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.main__content .section__experience {
+  margin-top: 1ch;
+  margin-bottom: 5ch;
+  grid-area: experience;
+  display: grid;
+  grid-template-columns: 1.3fr 1.3fr 1.3fr;
+  place-content: center;
+  grid-auto-flow: dense;
+  place-items: center;
+  gap: 18px;
+  padding: 10px;
+}
+.main__content .section__experience .users_testimonial {
+  background-color: hsl(300, 43%, 22%);
+  border-radius: 8px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 30px;
+  width: 420px;
+  flex-grow: 1;
+}
+.main__content .section__experience .users_testimonial:nth-child(2) {
+  transform: translateY(20px);
+}
+.main__content .section__experience .users_testimonial:nth-child(3) {
+  transform: translateY(40px);
+}
+.main__content .section__experience .users_testimonial .name_users {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: safe;
+  padding-bottom: 20px;
+}
+.main__content .section__experience .users_testimonial .name_users .icon_user {
+  clip-path: circle(30px);
+}
+.main__content
+  .section__experience
+  .users_testimonial
+  .name_users
+  .description_user
+  .name {
+  color: #fff;
+  font-size: 1rem;
+}
+.main__content
+  .section__experience
+  .users_testimonial
+  .name_users
+  .description_user
+  .sub_name {
+  color: hsl(333, 80%, 67%);
+  font-weight: 700;
+}
+.main__content .section__experience .users_testimonial .comments_exp {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+@media (max-width: 375px) {
+  body {
+    display: block;
+  }
+  .main__content {
+    grid-template-rows: 1fr;
+    grid-auto-flow: column;
+    place-content: center;
+    justify-items: center;
+    width: 100%;
+    margin-top: 0;
+    background-position: left top, bottom bottom;
+
+    background-size: 100%, cover;
+  }
+  .main__content .section__raiting {
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    height: 100%;
+    width: fit-content;
+  }
+  .main__content .section__raiting .article__raiting {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    transform: translateX(0);
+    flex-basis: 100%;
+  }
+  .main__content .section__experience {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .main__content .section__raiting .article__description {
+    padding-top: 50px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .main__content .section__raiting .article__description .title_p {
+    font-size: 2.5rem;
+    width: 80%;
+    padding: 10px 10px;
+  }
+  .main__content .section__raiting .article__description .sub_title--p {
+    width: 80%;
+  }
+
+  .main__content .section__experience .users_testimonial {
+    width: 300px;
+    padding: 20px;
+  }
+
+  .main__content .section__raiting .article__raiting .rate_users {
+    padding: 10px;
+    font-size: 15px;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+    line-height: 30px;
+  }
+  .main__content .section__raiting .article__raiting .rate_users:nth-child(1),
+  .main__content .section__raiting .article__raiting .rate_users:nth-child(3) {
+    transform: translateX(0);
+  }
+}
